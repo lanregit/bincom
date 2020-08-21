@@ -1,0 +1,93 @@
+<!doctype html>
+{% extends 'assignment5/base.html' %}
+{% load static %}
+
+        <title>
+            {% block title %}
+                Wedding HTML-5 Template
+            {% endblock %} 
+        </title>
+    {% block content %}
+    <main>
+
+        <!-- slider Area Start-->
+        <div class="slider-area ">
+            <!-- Mobile Menu -->
+            <div class="single-slider slider-height2  hero-overly d-flex align-items-center" data-background="{% static 'assignment5/assets/img/hero/about_hero.jpg' %}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap text-center">
+                                <h2>Our Gallery</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- slider End -->
+        <!-- our Memories start -->
+        <div class="our-memories-area section-padding2">
+            <div class="container">
+                <!-- section tittle -->
+                <div class="row ">
+                    <div class="col-lg-12">
+                        <div class="section-tittle text-center">
+                            <img src="{% static 'assignment5/assets/img/memories/section_tittle_flowre.png' %}" alt="">
+                            <h2>OUR MEMORIES</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-lg-12 col-md-4 memory">
+                        <h3>Picture Memories</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    {% if pic %}
+                    {% for p in pic %}
+                    <div class="col-lg-4 col-md-4">
+                        <div class="memory">
+                            <div class="memories-img img-responsive">
+                                <img src="{{ p.image.url }}" alt="">
+                                <div class="menorie-icon" href="{{ p.image.url }}">
+                                    <i class="ti-plus"></i>
+                                </div>
+                            </div>
+                            <p>{{ p.couple }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif%} 
+                </div>
+                <div class="row mt-5 mb-4">
+                    <div class="col-lg-12">
+                        <h3>Video Memories</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    {% if vid %}
+                    {% for v in vid %}
+                    <div class="col-lg-4 col-md-4">
+                        <div class="memory">
+                            <div class="memo-img">
+                                <video src="{{ v.video.url }}" controls="controls" width="100%" poster="{{ v.poster.url }}"> </video>
+                            </div>
+                            <p>{{ v.couple_name }}</p>
+                        </div>
+                    </div> 
+                    {% endfor %}
+                    {% endif %}
+                </div>
+
+            </div>
+            <!-- Shape Img -->
+            <div class="memories-shape d-none d-xl-block">
+                <img src="{% static 'assignment5/assets/img/memories/left-img.png' %}" class="memories-shape1" alt="">
+                <img src="{% static 'assignment5/assets/img/memories/right-img.png' %}" class="memories-shape2" alt="">
+            </div>
+        </div>
+        <!-- our Memories End-->
+    </main>
+    {% endblock %}
+  

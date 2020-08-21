@@ -1,0 +1,139 @@
+<!doctype html>
+{% extends 'assignment5/base.html' %}
+{% load static %}
+
+        <title>
+            {% block title %}
+                Wedding HTML-5 Template
+            {% endblock %} 
+        </title>
+        
+    {% block content %}
+    <main>
+
+        <!-- slider Area Start-->
+        <div class="slider-area ">
+            <!-- Mobile Menu -->
+            <div class="single-slider slider-height2  hero-overly d-flex align-items-center" data-background="{% static 'assignment5/assets/img/hero/about_hero.jpg' %}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap text-center">
+                                <h2>Our Location</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- slider Area End-->
+        <!-- Services Area Start-->
+        <div class="service-area ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="singl-services text-center mb-60">
+                            <div class="top-caption">
+                                <h4>Rehearsal Dinner</h4>
+                                <p>July 20, 2020</p>
+                            </div>
+                            <div class="services-img">
+                                <img src="{% static 'assignment5/assets/img/service/service1.png' %}" alt="">
+                                <div class="back-flower">
+                                    <img src="{% static 'assignment5/assets/img/service/services_flower1.png' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="bottom-caption">
+                                <span>12:00PM-2:00PM</span>
+                                <p>The Sierra Resort 14<br> Pacific Grove Monterey, CA</p>
+                            </div>
+                        </div> 
+                    </div><div class="col-lg-4">
+                        <div class="singl-services text-center mb-60">
+                            <div class="top-caption">
+                                <h4>The Ceremony</h4>
+                                <p>July 20, 2020</p>
+                            </div>
+                            <div class="services-img">
+                                <img src="{% static 'assignment5/assets/img/service/service2.png' %}" alt="">
+                                <div class="back-flower">
+                                    <img src="{% static 'assignment5/assets/img/service/services_flower1.png' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="bottom-caption">
+                                <span>12:00PM-2:00PM</span>
+                                <p>The Sierra Resort 14<br> Pacific Grove Monterey, CA</p>
+                            </div>
+                        </div> 
+                    </div><div class="col-lg-4">
+                        <div class="singl-services text-center mb-60">
+                            <div class="top-caption">
+                                <h4>Afterparty</h4>
+                                <p>July 20, 2020</p>
+                            </div>
+                            <div class="services-img">
+                                <img src="{% static 'assignment5/assets/img/service/service3.png' %}" alt="">
+                                <div class="back-flower">
+                                    <img src="{% static 'assignment5/assets/img/service/services_flower1.png' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="bottom-caption">
+                                <span>12:00PM-2:00PM</span>
+                                <p>The Sierra Resort 14<br> Pacific Grove Monterey, CA</p>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+             </div>
+        </div>
+        <!-- Services Area End-->
+        <!-- ================ Map ================= -->
+        <section class="contact-sections">
+            <div class="d-area">
+                <div id="map" style="height: 500px; position: relative; overflow: hidden;"></div>
+                <script>
+                    function initMap() {
+                        var uluru = {
+                            lat: -25.363,
+                            lng: 131.044
+                        };
+                        var grayStyles = [{
+                                featureType: "all",
+                                stylers: [{
+                                        saturation: -90
+                                    },
+                                    {
+                                        lightness: 50
+                                    }
+                                ]
+                            },
+                            {
+                                elementType: 'labels.text.fill',
+                                stylers: [{
+                                    color: '#ccdee9'
+                                }]
+                            }
+                        ];
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            center: {
+                                lat: -31.197,
+                                lng: 150.744
+                            },
+                            zoom: 9,
+                            styles: grayStyles,
+                            scrollwheel: false
+                        });
+                    }
+                </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&amp;callback=initMap">
+                </script>
+            </div>
+        </section>
+         <!-- ================ Map ================= -->
+
+
+    </main>
+    {% endblock %}
+   
+   
+	

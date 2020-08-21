@@ -1,0 +1,78 @@
+<!doctype html>
+{% extends 'assignment5/base.html' %}
+{% load static %}
+
+        <title>
+            {% block title %}
+                Wedding HTML-5 Template
+            {% endblock %} 
+        </title>
+
+    {% block content %}
+    <main>
+        <!-- Contact form Start -->
+        <div class="contact-form section-padding2 fix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 offset-lg-3 offset-xl-3">
+                        <div class="form-wrapper">
+                             <!-- section tittle -->
+                            <div class="row ">
+                                <div class="col-lg-12">
+                                    <div class="section-tittle tittle-form text-center">
+                                        <img src="{% static 'assignment5/assets/img/memories/section_tittle_flowre.png' %}" alt="">
+                                        <h2>Are you attending?</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <form id="contact-form" action="#" method="POST">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-box mb-30">
+                                            {{ form.full_name }}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-box subject-icon mb-30">
+                                            {{form.email}}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 mb-30">
+                                        <div class="select-itms">
+                                                {{form.guest}}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-box message-icon mb-30">
+                                            {{form.message}}
+                                        </div>
+                                    <div class="submit-info">
+                                            <button class="btn2" type="submit">R.S.V.P</button>
+                                    </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- Shape inner Flower -->
+                            <div class="shape-inner-flower">
+                                <img src="{% static 'assignment5/assets/img/flower/form-smoll-left.png' %}" class="top1" alt="">
+                                <img src="{% static 'assignment5/assets/img/flower/form-smoll-right.png' %}" class="top2" alt="">
+                                <img src="{% static 'assignment5/assets/img/flower/form-smoll-b-left.png' %}"class="top3"  alt="">
+                                <img src="{% static 'assignment5/assets/img/flower/form-smoll-b-right.png' %}"class="top4"  alt="">
+                            </div>
+                            <!-- Shape outer Flower -->
+                            <div class="shape-outer-flower">
+                                <img src="{% static 'assignment5/assets/img/flower/from-top.png' %}" class="outer-top" alt="">
+                                <img src="{% static 'assignment5/assets/img/flower/from-bottom.png' %}" class="outer-bottom" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact form End -->
+    </main>
+    {% endblock %}
+   
+   
+	
